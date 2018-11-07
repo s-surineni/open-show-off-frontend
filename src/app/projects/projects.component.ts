@@ -12,11 +12,11 @@ import { ProjectService } from '../project.service';
 export class ProjectsComponent implements OnInit {
     projects: Project[];
     
-    selectedProject: Project;
+    // selectedProject: Project;
 
-    onSelect(project: Project): void {
-        this.selectedProject = project;
-    }
+    // onSelect(project: Project): void {
+    //     this.selectedProject = project;
+    // }
 
     constructor(private projectService: ProjectService) { }
 
@@ -25,7 +25,8 @@ export class ProjectsComponent implements OnInit {
     }
 
     getProjects(): void {
-        this.projects = this.projectService.getProjects();
+        this.projectService.getProjects()
+            .subscribe(projects => this.projects = projects);
     }
 
 }
