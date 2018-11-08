@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 
 import { MessageService } from './message.service';
 import { Project } from './project';
-import { PROJECTS } from './mock-projects';
 
 
 @Injectable({
@@ -22,7 +21,9 @@ export class ProjectService {
 
     getProject(id: number): Observable<Project> {
         this.messageService.add(`ProjectService: fetched project id=${id}`);
-        return of(PROJECTS.find(project => project.id === id));
+        return of({'id': 1,
+                   'stars': 100,
+                   'name': 'Emacs'});
     }
     
     constructor(

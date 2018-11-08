@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
-import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -16,7 +15,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     ProjectsComponent,
     ProjectDetailComponent,
-    MessagesComponent,
     DashboardComponent
   ],
   imports: [
