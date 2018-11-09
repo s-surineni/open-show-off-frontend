@@ -15,7 +15,7 @@ export class ProjectService {
     private projectsUrl = 'github';
     
     getProjects(): Observable<Project[]> {
-        this.messageService.add('ProjectService: fetched projects');
+        
         return this.http.get<Project[]>(this.projectsUrl);
     }
 

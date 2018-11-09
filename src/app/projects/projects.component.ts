@@ -11,7 +11,8 @@ import { ProjectService } from '../project.service';
 })
 export class ProjectsComponent implements OnInit {
     projects: Project[];
-    
+    areProjectsFetched = false;
+
     constructor(private projectService: ProjectService) { }
 
     ngOnInit() {
@@ -19,8 +20,12 @@ export class ProjectsComponent implements OnInit {
     }
 
     getProjects(): void {
+        this.areProjectsFetched = false;
         this.projectService.getProjects()
-            .subscribe(projects => this.projects = projects);
+            .subscribe(projects => {
+                this.projects = projects;
+                this.areProjectsFetched = true;
+            });
     }
 
 }
