@@ -12,7 +12,7 @@ import { Project } from './project';
 })
 export class ProjectService {
 
-    private projectsUrl = 'github';
+    private projectsUrl = 'github/';
     
     getProjects(): Observable<Project[]> {
         
