@@ -13,28 +13,28 @@ import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
-  exports: [
-    MatProgressSpinnerModule
-  ]
+    exports: [
+        MatProgressSpinnerModule
+    ]
 })
 export class MaterialModule { }
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProjectsComponent,
-    ProjectDetailComponent,
-  ],
+    declarations: [
+        AppComponent,
+        ProjectsComponent,
+        ProjectDetailComponent,
+    ],
     exports: [MatProgressSpinnerModule],
-  imports: [
-      AppRoutingModule,
-      BrowserAnimationsModule,
-      BrowserModule,
-      MaterialModule,
-      HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MaterialModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
