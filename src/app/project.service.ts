@@ -26,7 +26,9 @@ export class ProjectService {
         this.messageService.add(`ProjectService: fetched project id=${id}`);
         return of({'id': 1,
                    'stars': 100,
-                   'name': 'Emacs'});
+                   'name': 'Emacs',
+                   description: 'This is the awesomest project',
+                    'avatar': "https://avatars2.githubusercontent.com/u/19891160?v=4"});
     }
     
     constructor(

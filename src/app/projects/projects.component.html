@@ -1,15 +1,4 @@
 <h2>Your Projects</h2>
-<div *ngIf="areProjectsFetched === false">Loading...</div>
-<mat-spinner strokeWidth="3"
-             [diameter]="50"
-             *ngIf="areProjectsFetched === false"></mat-spinner>
-<ul class="projects">
-    <li *ngFor="let project of projects">
-        <a routerLink="/detail/{{project.id}}">
-            <span class="badge">{{project.stars}}</span> {{project.name}}
-        </a>
-    </li>
-</ul>
 <div class="project-cards-holder">
     <mat-card *ngFor="let project of projects"
               class="project-card">
