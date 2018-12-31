@@ -1,11 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
 import { MessageService } from './message.service';
 import { Project } from './project';
-
+import { PROJECTS } from './mock-projects';
 
 @Injectable({
     providedIn: 'root',
@@ -15,8 +15,11 @@ export class ProjectService {
     private projectsUrl = 'github/';
     
     getProjects(): Observable<Project[]> {
-        
-        return this.http.get<Project[]>(this.projectsUrl);
+        if ( isDevMode() ) {
+            return of(PROJECTS);
+        } else {
+            return this.http.get<Project[]>(this.projectsUrl);
+        }
     }
 
     getProject(id: number): Observable<Project> {

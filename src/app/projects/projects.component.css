@@ -50,6 +50,14 @@
   border-radius: 4px 0 0 4px;
 }
 
+.project-cards-holder {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .project-card {
     max-width: 150px;
+    margin: 10px;
 }
+
+
