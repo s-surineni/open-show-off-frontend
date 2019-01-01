@@ -14,11 +14,11 @@ export class ProjectService {
 
     private projectsUrl = 'github/';
     
-    getProjects(): Observable<Project[]> {
+    getProjects(userName: string): Observable<Project[]> {
         if ( isDevMode() ) {
             return of(PROJECTS);
         } else {
-            return this.http.get<Project[]>(this.projectsUrl);
+            return this.http.get<Project[]>(this.projectsUrl + userName);
         }
     }
 
