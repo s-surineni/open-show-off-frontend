@@ -55,9 +55,27 @@
     flex-wrap: wrap;
 }
 
-.project-card {
-    max-width: 150px;
-    margin: 10px;
+.project-card-wrapper {
+    max-width: 16%;
+    min-width: 16%;
+    margin: 2%;
+    flex-basis: 16%;
+    box-sizing: border-box;
+    /* height: 250px; */
 }
 
-
+/* .project-name { */
+/*     height: 20%; */
+/* } */
+/* .project-avatar { */
+/*   display: block; */
+/*   margin-left: auto; */
+/*   margin-right: auto; */
+/*   width: 50%; */
+/* } */
+/* .project-description { */
+/*     height: 20%; */
+/* } */
+/* .project-butttons { */
+/*     height: 10%; */
+/* } */
