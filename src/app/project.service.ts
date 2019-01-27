@@ -13,13 +13,17 @@ import { PROJECTS } from './mock-projects';
 export class ProjectService {
 
     private projectsUrl = 'github/';
-    
+    private userNameUrl = 'github/userName/';
     getProjects(userName: string): Observable<Project[]> {
         if ( isDevMode() ) {
             return of(PROJECTS);
         } else {
             return this.http.get<Project[]>(this.projectsUrl + userName);
         }
+    }
+
+    getUserName(): Observable<string> {
+        return this.http.get<string>(this.userNameUrl);
     }
 
     getProject(id: number): Observable<Project> {
