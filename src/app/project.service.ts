@@ -1,11 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
 import { MessageService } from './message.service';
 import { Project } from './project';
-
+import { PROJECTS } from './mock-projects';
 
 @Injectable({
     providedIn: 'root',
@@ -13,17 +13,26 @@ import { Project } from './project';
 export class ProjectService {
 
     private projectsUrl = 'github/';
-    
-    getProjects(): Observable<Project[]> {
-        
-        return this.http.get<Project[]>(this.projectsUrl);
+    private userNameUrl = 'github/userName/';
+    getProjects(userName: string): Observable<Project[]> {
+        if ( isDevMode() ) {
+            return of(PROJECTS);
+        } else {
+            return this.http.get<Project[]>(this.projectsUrl + userName);
+        }
+    }
+
+    getUserName(): Observable<string> {
+        return this.http.get<string>(this.userNameUrl);
     }
 
     getProject(id: number): Observable<Project> {
         this.messageService.add(`ProjectService: fetched project id=${id}`);
         return of({'id': 1,
                    'stars': 100,
-                   'name': 'Emacs'});
+                   'name': 'Emacs',
+                   description: 'This is the awesomest project',
+                    'avatar': "https://avatars2.githubusercontent.com/u/19891160?v=4"});
     }
     
     constructor(

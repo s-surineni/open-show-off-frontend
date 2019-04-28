@@ -1,12 +1,32 @@
-<h2>Your Projects</h2>
-<div *ngIf="areProjectsFetched === false">Loading...</div>
-<mat-spinner strokeWidth="3"
-             [diameter]="50"
-             *ngIf="areProjectsFetched === false"></mat-spinner>
-<ul class="projects">
-    <li *ngFor="let project of projects">
-        <a routerLink="/detail/{{project.id}}">
-            <span class="badge">{{project.stars}}</span> {{project.name}}
-        </a>
-    </li>
-</ul>
+<div class="app-loading"
+     *ngIf="!areProjectsFetched">
+    <div class="logo"></div>
+    <svg class="spinner" viewBox="25 25 50 50">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+</div>
+<div *ngIf="areProjectsFetched">
+    <h2>Your Projects</h2>
+    <div class="project-cards-holder">
+        <div class="project-card-wrapper"
+             *ngFor="let project of projects">
+            <mat-card
+                class="project-card">
+                <mat-card-header>
+                    <mat-card-title class="project-name">{{project.name}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image
+                     class="project-avatar"
+                     src={{project.avatar}} alt="Photo of a Shiba Inu">
+                <mat-card-content class="project-description">
+                    <p>
+                        {{project.description}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions class="project-buttons">
+                    <button mat-button>Stars {{project.stars}}</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>
