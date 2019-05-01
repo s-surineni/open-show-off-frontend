@@ -1,0 +1,4 @@
+* delete all files under open_show_off\open_show_off\static\
+* generate files by using command ng build <--prod>
+* copy all the files in dist folder to open_show_off\open_show_off\static\
+* change index.html under open_show_off\open_show_off\index.html according to open_show_off\open_show_off\static\index.html
