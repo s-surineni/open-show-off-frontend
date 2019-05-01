@@ -15,7 +15,7 @@ export class ProjectService {
     private projectsUrl = 'github/';
     private userNameUrl = 'github/userName/';
     getProjects(userName: string): Observable<Project[]> {
-        if ( isDevMode() ) {
+        if (isDevMode()) {
             return of(PROJECTS);
         } else {
             return this.http.get<Project[]>(this.projectsUrl + userName);
@@ -23,18 +23,24 @@ export class ProjectService {
     }
 
     getUserName(): Observable<string> {
-        return this.http.get<string>(this.userNameUrl);
+        if (isDevMode()) {
+            return of('s-surineni');
+        } else {
+            return this.http.get<string>(this.userNameUrl);
+        }
     }
 
     getProject(id: number): Observable<Project> {
         this.messageService.add(`ProjectService: fetched project id=${id}`);
-        return of({'id': 1,
-                   'stars': 100,
-                   'name': 'Emacs',
-                   description: 'This is the awesomest project',
-                    'avatar': "https://avatars2.githubusercontent.com/u/19891160?v=4"});
+        return of({
+            'id': 1,
+            'stars': 100,
+            'name': 'Emacs',
+            description: 'This is the awesomest project',
+            'avatar': "https://avatars2.githubusercontent.com/u/19891160?v=4"
+        });
     }
-    
+
     constructor(
         private http: HttpClient,
         private messageService: MessageService

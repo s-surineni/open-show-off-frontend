@@ -1,15 +1,3 @@
 import { Project } from './project';
 
-export const PROJECTS: Project[] = [
-    { id: 11, name: 'Mr. Nice', stars: 11, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 12, name: 'Narco', stars: 12, description: 'This is the awesomest project and it has a very long description', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 13, name: 'Bombasto', stars: 13, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 14, name: 'Celeritas', stars: 14, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 15, name: 'Magneta', stars: 15, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 16, name: 'RubberMan', stars: 16, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 17, name: 'Dynama', stars: 17, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 18, name: 'Dr IQ', stars: 18, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 19, name: 'Magma', stars: 19, description: 'This is the awesomest project', avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"},
-    { id: 20, name: 'Tornado', stars: 20, description: 'This is the awesomest project',
-     avatar: "https://avatars2.githubusercontent.com/u/19891160?v=4"}
-];
+export const PROJECTS: Project[] = [{ "id": 43160685, "name": "zulip", "stars": 9702, "description": "Zulip server - powerful open source team chat", "avatar": "https://avatars2.githubusercontent.com/u/4921959?v=4" }, { "id": 2133437, "name": "projectile", "stars": 2615, "description": "Project Interaction Library for Emacs", "avatar": "https://avatars0.githubusercontent.com/u/103882?v=4" }, { "id": 8228169, "name": "phonegap-docs", "stars": 117, "description": "PhoneGap Documentation", "avatar": "https://avatars0.githubusercontent.com/u/60365?v=4" }, { "id": 81246468, "name": "RatS", "stars": 88, "description": "Movie Ratings Synchronization with Python", "avatar": "https://avatars2.githubusercontent.com/u/9078002?v=4" }, { "id": 28767919, "name": "GitFx", "stars": 13, "description": "Gitfx Java FX application", "avatar": "https://avatars2.githubusercontent.com/u/7098456?v=4" }];
