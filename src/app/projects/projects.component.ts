@@ -40,6 +40,12 @@ export class ProjectsComponent implements OnInit {
                         this.areProjectsFetched = true;
                     });
             });
+        } else {
+            this.projectService.getProjects(userName)
+                .subscribe(projects => {
+                    this.projects = projects;
+                    this.areProjectsFetched = true;
+                });
         }
         // this.projectService.getProjects(userName)
         //     .subscribe(projects => {

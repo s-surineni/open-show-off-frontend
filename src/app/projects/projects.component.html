@@ -8,25 +8,20 @@
 <div *ngIf="areProjectsFetched">
     <h2>Your Projects</h2>
     <div class="project-cards-holder">
-        <div class="project-card-wrapper"
+        <div class="project-1"
              *ngFor="let project of projects">
-            <mat-card
-                class="project-card">
-                <mat-card-header>
-                    <mat-card-title class="project-name">{{project.name}}</mat-card-title>
-                </mat-card-header>
-                <img mat-card-image
-                     class="project-avatar"
-                     src={{project.avatar}} alt="Photo of a Shiba Inu">
-                <mat-card-content class="project-description">
+            <a href={{project.html_url}} class="project-card">
+                <div class="project-image"
+                     [ngStyle]="{'background-image':'url('+project.avatar+')'}">
+                </div>
+                <article>
+                    <h1>{{project.name}}</h1>
                     <p>
                         {{project.description}}
                     </p>
-                </mat-card-content>
-                <mat-card-actions class="project-buttons">
-                    <button mat-button>Stars {{project.stars}}</button>
-                </mat-card-actions>
-            </mat-card>
+                    <span>Stars {{project.stars}}</span>
+                </article>
+            </a>
         </div>
     </div>
 </div>
