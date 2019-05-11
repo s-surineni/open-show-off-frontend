@@ -32,13 +32,7 @@ export class ProjectService {
 
     getProject(id: number): Observable<Project> {
         this.messageService.add(`ProjectService: fetched project id=${id}`);
-        return of({
-            'id': 1,
-            'stars': 100,
-            'name': 'Emacs',
-            description: 'This is the awesomest project',
-            'avatar': "https://avatars2.githubusercontent.com/u/19891160?v=4"
-        });
+        return of({"id": 43160685, "name": "zulip", "stars": 9702, "description": "Zulip server - powerful open source team chat", "avatar": "https://avatars2.githubusercontent.com/u/4921959?v=4", "html_url": "https://github.com/zulip/zulip"});
     }
 
     constructor(
